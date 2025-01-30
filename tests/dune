@@ -1,23 +1,4 @@
-(executable
- (name ISO8601_TEST)
- (modules :standard \ Test)
+(tests
+ (names ISO8601_TEST test)
  (flags :standard -warn-error -a)
- (libraries unix oUnit ISO8601 stdlib-shims))
-
-(alias
- (name runtest)
- (deps ISO8601_TEST.exe)
- (action
-  (run ./ISO8601_TEST.exe)))
-
-(executable
- (name test)
- (modules test)
- (flags :standard -warn-error -a)
- (libraries unix alcotest ISO8601 duration stdlib-shims))
-
-(alias
- (name runtest)
- (deps test.exe)
- (action
-  (run ./test.exe)))
+ (libraries unix oUnit alcotest ISO8601 stdlib-shims))
